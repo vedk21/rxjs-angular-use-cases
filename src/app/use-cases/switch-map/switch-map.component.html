@@ -1,0 +1,25 @@
+<div id="switch-map-container">
+  <div class="controls">
+    <button mat-raised-button color="primary" (click)="getPosts()">Get Posts</button>
+  </div>
+  <div class="headers">
+    <h4>Posts</h4>
+    <h4>Details</h4>
+  </div>
+  <div class="solution">
+    <ul class="list primary">
+      <li class="item" *ngFor="let post of posts$ | async" (click)="getPost(post.id)">
+        {{ post.title }}
+      </li>
+    </ul>
+    <div class="details">
+      <h3>{{ post?.title }}</h3>
+      <p>{{ post?.body }}</p>
+      <ul class="list accent">
+        <li class="item" *ngFor="let comment of post?.comments$ | async">
+          {{ comment.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

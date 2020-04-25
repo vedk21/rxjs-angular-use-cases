@@ -1,0 +1,13 @@
+<div id="app-root-container">
+  <div class="use-case-controls">
+    <mat-form-field>
+      <mat-label>Select a use case</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option *ngFor="let case of useCases" [value]="case">{{ case }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="use-case-box" [ngSwitch]="selected">
+    <app-switch-map *ngSwitchCase="'switchMap'"></app-switch-map>
+  </div>
+</div>

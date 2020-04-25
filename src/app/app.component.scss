@@ -1,0 +1,20 @@
+#app-root-container {
+  height: 100%;
+
+  .use-case-controls {
+    height: 10em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    mat-form-field {
+      font-size: 1rem;
+      width: 20em;
+    }
+  }
+
+  .use-case-box {
+    height: calc(100% - 10em);
+  }
+}
